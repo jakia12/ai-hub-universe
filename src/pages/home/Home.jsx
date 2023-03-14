@@ -5,11 +5,10 @@ import SingleCard from "../../components/singleCard/SingleCard";
 const Home = () => {
   // state for storing tools data
   const [tools, setTools] = useState([]);
-  const [sortedTools, setSortedTools] = useState([]);
 
   const [isSorted, setIsSorted] = useState(false);
 
-  // sort data by publishing date
+  // sort data by published date
   const handleSort = () => {
     setIsSorted(true);
     const sortedData = tools.sort(
@@ -33,8 +32,9 @@ const Home = () => {
   console.log(tools);
 
   //card number to show
-
   const cardToShow = 6;
+
+  // state to update card number dynamically
   const [next, setNext] = useState(cardToShow);
 
   const slicedTools = tools?.slice(0, next);
@@ -42,10 +42,10 @@ const Home = () => {
 
   const restTools = toolsLen - cardToShow;
 
+  // show all data when clicking on see more btn
   const handleShowAll = () => {
     setNext(next + restTools);
   };
-  //const sortedArray = isSorted ? sortedTools  !isSorted tools :;
 
   return (
     <section className="py-14 lg:py-16">

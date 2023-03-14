@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import chatGpt from "../../images/chatGpt.png";
 import calenderIcon from "../../images/icons/calender.svg";
 import { BsArrowRightShort } from "react-icons/bs";
 import DetailsModal from "../detailsModal/DetailsModal";
@@ -33,7 +32,7 @@ const SingleCard = ({ tool }) => {
       <hr className="my-4 text-gray-300" />
       <div className="flex items-center justify-between">
         <div className=" text-left">
-          <h3 className="text-[25px] text-textPrimary font-[600] mb-3">
+          <h3 className="text-[25px] text-textPrimary font-[600] mb-2">
             {name ? name : "No data available"}
           </h3>
           <div className="flex items-center ">

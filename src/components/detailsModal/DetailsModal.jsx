@@ -1,8 +1,10 @@
 import React from "react";
 
 const DetailsModal = ({ toolInfo, setToolInfo }) => {
+  // destructuring toolInfo data
   const { image, description, features, links } = toolInfo;
 
+  //   empty toolInfo data when closing the modal
   const handleClose = () => {
     setToolInfo("");
   };
@@ -15,7 +17,7 @@ const DetailsModal = ({ toolInfo, setToolInfo }) => {
         <div className="modal-box relative w-11/12 max-w-6xl">
           <label
             htmlFor="my-modal-3"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
+            className="btn btn-sm btn-circle absolute right-3 top-3"
             onClick={handleClose}
           >
             ✕
@@ -77,13 +79,14 @@ const DetailsModal = ({ toolInfo, setToolInfo }) => {
                 </div>
               </div>
               <div className="w-full md:w-6/12">
-                <div className="p-6 text-center mx-2.5 border border-gray-200 min-h-[500px] h-[500px] rounded">
+                {/* modal image info */}
+                <div className="p-6 text-center mx-2.5 mt-5 md:mt-0 border border-gray-200 min-h-[500px] h-[500px] rounded ">
                   <img
                     src={image}
                     className="w-[437px] h-[339px] max-w-full rounded-lg "
                     alt=""
                   />
-                  <h3 className="text-[25px] text-textPrimary font-[600] mt-3 mb-2 ">
+                  <h3 className="text-[25px] text-textPrimary font-[600] mt-4 mb-2 ">
                     Hi, how are you doing today?
                   </h3>
                   <p className="list-disc mb-2 text-[16px] font-normal text-textSecondary ml-4">
