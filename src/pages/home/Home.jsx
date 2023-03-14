@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SingleCard from "../../components/singleCard/SingleCard";
+import Spinner from "../../components/spinner/Spinner";
 
 const Home = () => {
   // state for storing tools data
   const [tools, setTools] = useState([]);
+
+  // show spinner while loading data
+  const [isLoading, setIsLoading] = useState(true);
 
   const [isSorted, setIsSorted] = useState(false);
 
@@ -24,7 +28,11 @@ const Home = () => {
         "https://openapi.programming-hero.com/api/ai/tools"
       );
       const toolData = await response.data;
+      // passing the tooLdata to the tools state
       setTools(toolData.data.tools);
+
+      // hide spinner once data loaded
+      setIsLoading(!true);
       console.log(tools.data);
     };
     fetchTools();
@@ -62,6 +70,11 @@ const Home = () => {
           >
             Sort by date
           </button>
+        </div>
+
+        {/* show spinner  */}
+        <div className={`py-40 ${!isLoading ? "hidden" : "block"}`}>
+          <Spinner />
         </div>
         {/* tools card */}
         <div className="flex items-center justify-center flex-wrap mb-5">
