@@ -11,13 +11,12 @@ const Home = () => {
         "https://openapi.programming-hero.com/api/ai/tools"
       );
       const toolData = await response.data;
-      setTools(toolData);
+      setTools(toolData.data.tools);
       console.log(tools.data);
     };
     fetchTools();
   }, []);
-
-  console.log(tools.data);
+  console.log(tools);
   return (
     <section className="py-14 lg:py-20">
       <div className="container mx-auto md:max-w-7xl px-6 w-full">
@@ -32,11 +31,15 @@ const Home = () => {
           </button>
         </div>
 
-        <div className="flex items-center justify-center">
-          {/* tools card */}
-          <div className="w-full sm:w-6/12 md:w-4/12">
-            <SingleCard />
-          </div>
+        <div className="flex items-center justify-center flex-wrap">
+          {tools?.map((tool) => (
+            <div
+              className="w-full sm:w-6/12 md:w-4/12 mx-auto sm:mx-0"
+              key={tool.id}
+            >
+              <SingleCard tool={tool} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
