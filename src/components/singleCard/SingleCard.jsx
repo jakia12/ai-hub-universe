@@ -8,7 +8,7 @@ const SingleCard = ({ tool }) => {
   // destructure all tools data
   const { id, name, image, features, published_in } = tool;
 
-  const [toolInfo, setToolInfo] = useState(null);
+  const [toolInfo, setToolInfo] = useState("");
 
   //   pass the tool data when clicking on details button
   const handleShow = (tool) => {
@@ -16,7 +16,7 @@ const SingleCard = ({ tool }) => {
   };
   console.log(toolInfo);
   return (
-    <div className="m-3 border border-gray-200 rounded-lg text-left p-4 min-h-[507px]">
+    <div className="m-3 border border-gray-200 rounded-lg text-left p-5 min-h-[507px]">
       <img
         src={image}
         alt=""
@@ -25,7 +25,7 @@ const SingleCard = ({ tool }) => {
       <h3 className="text-[25px] text-textPrimary font-[600] "> Features</h3>
       <ul>
         {features?.map((feature) => (
-          <li className="list-decimal mb-2 text-[16px] font-normal text-textSecondary ml-4">
+          <li className="list-decimal mb-2 text-[16px] font-normal text-textSecondary ml-5">
             {feature ? feature : "No data available"}
           </li>
         ))}
