@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+## Applicatin name : Ai Universe Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site Link:  [Click Here](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Technology being used:
+* Html
+* CSS
+* Tailwind CSS
+* Daisy Ui
+* React Js
+* Axios Library
+
+
+## Tools being used:
+* Netlify
+* Github
+
 
