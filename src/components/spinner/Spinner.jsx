@@ -1,23 +1,18 @@
 import React from "react";
-import "./Spinner.css";
+import { Bars } from "react-loader-spinner";
 
 const Spinner = () => {
   return (
     <div className="text-center">
-      <div class="loader--spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <Bars
+        height="80"
+        width="80"
+        color="#EB5757"
+        ariaLabel="bars-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
     </div>
   );
 };

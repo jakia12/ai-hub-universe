@@ -73,7 +73,11 @@ const Home = () => {
         </div>
 
         {/* show spinner  */}
-        <div className={`py-40 ${!isLoading ? "hidden" : "block"}`}>
+        <div
+          className={`py-40 flex items-center justify-center  ${
+            isLoading ? "block" : "hidden"
+          }`}
+        >
           <Spinner />
         </div>
         {/* tools card */}
